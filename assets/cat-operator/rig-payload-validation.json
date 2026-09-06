@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "passed": true,
+  "errors": [],
+  "warnings": [
+    "joints with no active vertex influence: Root"
+  ],
+  "summary": {
+    "jointCount": 22,
+    "vertexCount": 178806,
+    "maxInfluences": 4,
+    "activeVertexCountByJoint": [
+      0,
+      37883,
+      18546,
+      21524,
+      686,
+      61953,
+      2254,
+      7110,
+      3958,
+      5130,
+      2254,
+      7110,
+      3958,
+      5130,
+      9514,
+      5970,
+      10280,
+      4328,
+      9532,
+      5970,
+      10280,
+      4328
+    ]
+  },
+  "evidenceBoundary": "structural payload only; runtime deformation and screenshot gates are separate"
+}

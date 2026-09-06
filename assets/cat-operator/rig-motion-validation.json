@@ -1,0 +1,42 @@
+{
+  "passed": true,
+  "bindAppearance": [
+    {
+      "view": "front",
+      "rgbRMSE": 0.07936948938395927
+    },
+    {
+      "view": "right",
+      "rgbRMSE": 0.064539067443881
+    },
+    {
+      "view": "back",
+      "rgbRMSE": 0.0026224417446771534
+    },
+    {
+      "view": "left",
+      "rgbRMSE": 0.011304924284879331
+    },
+    {
+      "view": "hero",
+      "rgbRMSE": 0.012599552224419268
+    }
+  ],
+  "sampledPoses": 33,
+  "sampledVerticesPerPose": 3794,
+  "maxExportPositionError": 4.823990058522298e-7,
+  "maxSampledEdgeStretch": 1.7001639608280212,
+  "minSampledEdgeStretch": 0.1452575205583965,
+  "maxPlantedSoleHeightError": 6.191878701338656e-8,
+  "loopContinuity": [
+    "Idle",
+    "Walk",
+    "Wave"
+  ],
+  "walkFootTravel": 0.4467361466376659,
+  "waveHandLift": 1.0098386660181282,
+  "bones": 22,
+  "meshes": 121,
+  "sharedBoneHierarchy": true,
+  "limitations": "Sampled deformation and foot-contact checks, not an exhaustive collision test. Walk is in-place: translate the avatar externally at approximately 0.70 units per second. Root is a global control with no direct vertex weights."
+}

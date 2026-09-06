@@ -1,0 +1,504 @@
+{
+  "triangles": 227364,
+  "meshes": [
+    {
+      "name": "head",
+      "triangles": 10752
+    },
+    {
+      "name": "ear-r",
+      "triangles": 12288
+    },
+    {
+      "name": "ear-l",
+      "triangles": 12288
+    },
+    {
+      "name": "ear-inset-r",
+      "triangles": 9408
+    },
+    {
+      "name": "eye-upper-rim-r",
+      "triangles": 2976
+    },
+    {
+      "name": "eye-sclera-r",
+      "triangles": 2976
+    },
+    {
+      "name": "eye-iris-r",
+      "triangles": 2976
+    },
+    {
+      "name": "eye-pupil-r",
+      "triangles": 2976
+    },
+    {
+      "name": "eye-catchlight-r",
+      "triangles": 1488
+    },
+    {
+      "name": "whisker-r-1",
+      "triangles": 448
+    },
+    {
+      "name": "whisker-r-2",
+      "triangles": 448
+    },
+    {
+      "name": "whisker-r-3",
+      "triangles": 448
+    },
+    {
+      "name": "ear-inset-l",
+      "triangles": 9408
+    },
+    {
+      "name": "eye-upper-rim-l",
+      "triangles": 2976
+    },
+    {
+      "name": "eye-sclera-l",
+      "triangles": 2976
+    },
+    {
+      "name": "eye-iris-l",
+      "triangles": 2976
+    },
+    {
+      "name": "eye-pupil-l",
+      "triangles": 2976
+    },
+    {
+      "name": "eye-catchlight-l",
+      "triangles": 1488
+    },
+    {
+      "name": "whisker-l-1",
+      "triangles": 448
+    },
+    {
+      "name": "whisker-l-2",
+      "triangles": 448
+    },
+    {
+      "name": "whisker-l-3",
+      "triangles": 448
+    },
+    {
+      "name": "nose",
+      "triangles": 1292
+    },
+    {
+      "name": "mouth-philtrum",
+      "triangles": 252
+    },
+    {
+      "name": "mouth-smile--1",
+      "triangles": 480
+    },
+    {
+      "name": "mouth-smile-1",
+      "triangles": 480
+    },
+    {
+      "name": "headband",
+      "triangles": 580
+    },
+    {
+      "name": "headband-pad",
+      "triangles": 580
+    },
+    {
+      "name": "earcup-pad-r",
+      "triangles": 256
+    },
+    {
+      "name": "earcup-r",
+      "triangles": 256
+    },
+    {
+      "name": "earcup-rim-r",
+      "triangles": 256
+    },
+    {
+      "name": "earcup-face-r",
+      "triangles": 256
+    },
+    {
+      "name": "headband-slider-r",
+      "triangles": 588
+    },
+    {
+      "name": "earcup-pad-l",
+      "triangles": 256
+    },
+    {
+      "name": "earcup-l",
+      "triangles": 256
+    },
+    {
+      "name": "earcup-rim-l",
+      "triangles": 256
+    },
+    {
+      "name": "earcup-face-l",
+      "triangles": 256
+    },
+    {
+      "name": "headband-slider-l",
+      "triangles": 588
+    },
+    {
+      "name": "mic-boom",
+      "triangles": 1536
+    },
+    {
+      "name": "mic-capsule",
+      "triangles": 2976
+    },
+    {
+      "name": "neck",
+      "triangles": 2976
+    },
+    {
+      "name": "shirt",
+      "triangles": 7168
+    },
+    {
+      "name": "tie",
+      "triangles": 92
+    },
+    {
+      "name": "tie-knot",
+      "triangles": 60
+    },
+    {
+      "name": "lanyard-strap--1",
+      "triangles": 580
+    },
+    {
+      "name": "lanyard-strap-1",
+      "triangles": 580
+    },
+    {
+      "name": "lanyard-neck",
+      "triangles": 580
+    },
+    {
+      "name": "id-clip",
+      "triangles": 1488
+    },
+    {
+      "name": "id-clip-loop",
+      "triangles": 588
+    },
+    {
+      "name": "id-badge-frame",
+      "triangles": 588
+    },
+    {
+      "name": "id-badge",
+      "triangles": 588
+    },
+    {
+      "name": "shirt-pocket",
+      "triangles": 76
+    },
+    {
+      "name": "shirt-pocket-hem",
+      "triangles": 588
+    },
+    {
+      "name": "pen",
+      "triangles": 588
+    },
+    {
+      "name": "pen-clip",
+      "triangles": 588
+    },
+    {
+      "name": "collar-stand",
+      "triangles": 2240
+    },
+    {
+      "name": "collar-r",
+      "triangles": 60
+    },
+    {
+      "name": "collar-edge-stitch-r",
+      "triangles": 1152
+    },
+    {
+      "name": "collar-l",
+      "triangles": 60
+    },
+    {
+      "name": "collar-edge-stitch-l",
+      "triangles": 1152
+    },
+    {
+      "name": "shirt-back-yoke",
+      "triangles": 1152
+    },
+    {
+      "name": "shirt-front-placket",
+      "triangles": 1152
+    },
+    {
+      "name": "shirt-pocket-stitch",
+      "triangles": 1152
+    },
+    {
+      "name": "pants-pelvis",
+      "triangles": 2976
+    },
+    {
+      "name": "belt",
+      "triangles": 1280
+    },
+    {
+      "name": "rear-welt-r",
+      "triangles": 588
+    },
+    {
+      "name": "rear-welt-l",
+      "triangles": 588
+    },
+    {
+      "name": "belt-buckle",
+      "triangles": 1024
+    },
+    {
+      "name": "belt-loop-1",
+      "triangles": 588
+    },
+    {
+      "name": "belt-loop-2",
+      "triangles": 588
+    },
+    {
+      "name": "belt-loop-3",
+      "triangles": 588
+    },
+    {
+      "name": "belt-loop-4",
+      "triangles": 588
+    },
+    {
+      "name": "belt-loop-5",
+      "triangles": 588
+    },
+    {
+      "name": "rear-pocket-stitch-r",
+      "triangles": 1152
+    },
+    {
+      "name": "rear-pocket-stitch-l",
+      "triangles": 1152
+    },
+    {
+      "name": "fly-stitch",
+      "triangles": 1152
+    },
+    {
+      "name": "arm-r",
+      "triangles": 3416
+    },
+    {
+      "name": "sleeve-r",
+      "triangles": 4480
+    },
+    {
+      "name": "paw-r",
+      "triangles": 4648
+    },
+    {
+      "name": "cuff-r",
+      "triangles": 1536
+    },
+    {
+      "name": "sleeve-seam-r",
+      "triangles": 1152
+    },
+    {
+      "name": "cuff-rolled-edge-r-0",
+      "triangles": 768
+    },
+    {
+      "name": "cuff-rolled-edge-r-1",
+      "triangles": 768
+    },
+    {
+      "name": "pant-leg-r",
+      "triangles": 7168
+    },
+    {
+      "name": "boot-r",
+      "triangles": 7168
+    },
+    {
+      "name": "boot-sole-r",
+      "triangles": 1532
+    },
+    {
+      "name": "pant-hem-r",
+      "triangles": 1792
+    },
+    {
+      "name": "cargo-pocket-r",
+      "triangles": 588
+    },
+    {
+      "name": "cargo-flap-r",
+      "triangles": 588
+    },
+    {
+      "name": "pant-front-seam-r",
+      "triangles": 1152
+    },
+    {
+      "name": "pant-back-seam-r",
+      "triangles": 1152
+    },
+    {
+      "name": "hip-pocket-opening-r",
+      "triangles": 1152
+    },
+    {
+      "name": "boot-toe-seam-r",
+      "triangles": 1152
+    },
+    {
+      "name": "boot-quarter-seam-r",
+      "triangles": 1152
+    },
+    {
+      "name": "cargo-pocket-stitch-r",
+      "triangles": 1152
+    },
+    {
+      "name": "cargo-flap-stitch-r",
+      "triangles": 1152
+    },
+    {
+      "name": "boot-laces-r-seated-0",
+      "triangles": 1152
+    },
+    {
+      "name": "boot-laces-r-seated-1",
+      "triangles": 1152
+    },
+    {
+      "name": "boot-laces-r-seated-2",
+      "triangles": 1152
+    },
+    {
+      "name": "arm-l",
+      "triangles": 3416
+    },
+    {
+      "name": "sleeve-l",
+      "triangles": 4480
+    },
+    {
+      "name": "paw-l",
+      "triangles": 4648
+    },
+    {
+      "name": "cuff-l",
+      "triangles": 1536
+    },
+    {
+      "name": "sleeve-seam-l",
+      "triangles": 1152
+    },
+    {
+      "name": "cuff-rolled-edge-l-0",
+      "triangles": 768
+    },
+    {
+      "name": "cuff-rolled-edge-l-1",
+      "triangles": 768
+    },
+    {
+      "name": "pant-leg-l",
+      "triangles": 7168
+    },
+    {
+      "name": "boot-l",
+      "triangles": 7168
+    },
+    {
+      "name": "boot-sole-l",
+      "triangles": 1532
+    },
+    {
+      "name": "pant-hem-l",
+      "triangles": 1792
+    },
+    {
+      "name": "cargo-pocket-l",
+      "triangles": 588
+    },
+    {
+      "name": "cargo-flap-l",
+      "triangles": 588
+    },
+    {
+      "name": "pant-front-seam-l",
+      "triangles": 1152
+    },
+    {
+      "name": "pant-back-seam-l",
+      "triangles": 1152
+    },
+    {
+      "name": "hip-pocket-opening-l",
+      "triangles": 1152
+    },
+    {
+      "name": "boot-toe-seam-l",
+      "triangles": 1152
+    },
+    {
+      "name": "boot-quarter-seam-l",
+      "triangles": 1152
+    },
+    {
+      "name": "cargo-pocket-stitch-l",
+      "triangles": 1152
+    },
+    {
+      "name": "cargo-flap-stitch-l",
+      "triangles": 1152
+    },
+    {
+      "name": "boot-laces-l-seated-0",
+      "triangles": 1152
+    },
+    {
+      "name": "boot-laces-l-seated-1",
+      "triangles": 1152
+    },
+    {
+      "name": "boot-laces-l-seated-2",
+      "triangles": 1152
+    }
+  ],
+  "materialCount": 22,
+  "bounds": {
+    "isBox3": true,
+    "min": {
+      "x": -0.897222192287445,
+      "y": -1.2025237097756936e-8,
+      "z": -0.5649999976158142
+    },
+    "max": {
+      "x": 0.897222192287445,
+      "y": 3.491850233078003,
+      "z": 0.7129999995231628
+    }
+  },
+  "errors": []
+}

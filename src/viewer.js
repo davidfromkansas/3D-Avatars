@@ -3,8 +3,11 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 import { GLTFExporter } from 'three/addons/exporters/GLTFExporter.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { createRiggedCatOperator, resetRig, updateRig, applyRigProbe } from './cat-rig.js';
 
 const params = new URLSearchParams(location.search);
+const rigged = params.has('rigged') || (!params.has('capture') && !params.has('static') && !params.has('glb'));
+const assetName = rigged ? 'cat-operator-rigged' : 'cat-operator';
 if (params.has('capture')) document.body.classList.add('capture');
 const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
 renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
@@ -52,8 +55,11 @@ floor.visible = !params.has('capture');
 scene.add(floor);
 let model;
 if (params.has('glb')) {
-  const loaded = await new GLTFLoader().loadAsync('/assets/cat-operator/cat-operator.glb');
-  model = loaded.scene.getObjectByName('Cat-Operator') || loaded.scene;
+  const loaded = await new GLTFLoader().loadAsync(`/assets/cat-operator/${assetName}.glb`);
+  model = loaded.scene.getObjectByName(rigged ? 'Cat-Operator-Rigged' : 'Cat-Operator') || loaded.scene;
+  model.animations = loaded.animations;
+} else if (rigged) {
+  model = await createRiggedCatOperator();
 } else {
   try {
     const { createCatOperator } = await import('./cat-operator.js');
@@ -65,7 +71,43 @@ if (params.has('glb')) {
   }
 }
 scene.add(model);
-model.traverse(o => { if (o.isMesh) { o.castShadow = true; o.receiveShadow = false; } });
+model.traverse(o => { if (o.isMesh) { o.castShadow = true; o.receiveShadow = false; if (o.isSkinnedMesh) o.frustumCulled = false; } });
+const mixer = rigged ? new THREE.AnimationMixer(model) : null;
+const clips = model.animations || [];
+const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+const skeletonHelper = rigged ? new THREE.SkeletonHelper(model) : null;
+if (skeletonHelper) { skeletonHelper.visible = false; skeletonHelper.material.depthTest = false; scene.add(skeletonHelper); }
+let activeAction = null, playing = false;
+function playAnimation(name, time = 0, autoplay = true) {
+  if (!mixer) return;
+  mixer.stopAllAction();
+  resetRig(model);
+  activeAction = null;
+  const clip = clips.find(clip => clip.name === name);
+  if (clip) { activeAction = mixer.clipAction(clip).reset().play(); mixer.setTime(time); }
+  playing = Boolean(clip) && autoplay;
+  document.querySelector('#animation').value = clip?.name || '';
+  document.querySelector('#play').textContent = playing ? 'Pause' : 'Play';
+  updateRig(model, true);
+}
+for (const id of ['animation', 'play', 'skeleton']) document.querySelector(`#${id}`).hidden = !rigged;
+document.querySelector('#explode').hidden = rigged;
+document.querySelector('#download').href = `/assets/cat-operator/${assetName}.glb`;
+document.querySelector('#variant').href = rigged ? '/?static' : '/?rigged';
+document.querySelector('#variant').textContent = rigged ? 'Static version' : 'Rigged version';
+document.querySelector('#animation').onchange = event => playAnimation(event.target.value);
+document.querySelector('#play').onclick = () => {
+  if (!activeAction) return playAnimation('Idle');
+  playing = !playing;
+  document.querySelector('#play').textContent = playing ? 'Pause' : 'Play';
+};
+document.querySelector('#skeleton').onclick = event => {
+  skeletonHelper.visible = !skeletonHelper.visible;
+  event.target.setAttribute('aria-pressed', String(skeletonHelper.visible));
+  event.target.textContent = skeletonHelper.visible ? 'Hide skeleton' : 'Show skeleton';
+};
+reducedMotion.addEventListener('change', event => { if (event.matches) { playing = false; document.querySelector('#play').textContent = 'Play'; } });
+if (rigged && !params.has('capture') && !reducedMotion.matches) playAnimation('Idle');
 function setView(azimuth = 0, elevation = 4) {
   const angle = THREE.MathUtils.degToRad(azimuth);
   const rise = THREE.MathUtils.degToRad(elevation);
@@ -85,7 +127,13 @@ function resize() {
 resize();
 setView(Number(params.get('angle') || 0));
 window.addEventListener('resize', resize);
-renderer.setAnimationLoop(() => { controls.update(); renderer.render(scene, camera); });
+const clock = new THREE.Clock();
+renderer.setAnimationLoop(() => {
+  const delta = Math.min(clock.getDelta(), 0.05);
+  if (playing) { mixer.update(delta); updateRig(model); }
+  controls.update();
+  renderer.render(scene, camera);
+});
 const initialPositions = new Map(model.children.map(o => [o, o.position.clone()]));
 let exploded = false;
 document.querySelector('#front').onclick = () => setView(0);
@@ -102,6 +150,7 @@ document.querySelector('#explode').onclick = () => {
 };
 const raycaster = new THREE.Raycaster();
 renderer.domElement.addEventListener('pointerdown', event => {
+  if (rigged) updateRig(model, true);
   raycaster.setFromCamera(new THREE.Vector2(event.clientX / innerWidth * 2 - 1, 1 - event.clientY / innerHeight * 2), camera);
   const hit = raycaster.intersectObject(model)[0];
   if (hit && !params.has('capture')) document.querySelector('header p').textContent = hit.object.name;
@@ -109,6 +158,11 @@ renderer.domElement.addEventListener('pointerdown', event => {
 window.avatar = {
   setView,
   model,
+  clips: clips.map(clip => ({ name: clip.name, duration: clip.duration })),
+  seek(name, time) { playAnimation(name, time, false); },
+  probe(name) { if (!rigged) return; mixer.stopAllAction(); playing = false; applyRigProbe(model, name); },
+  rigPayload() { return model.rigPayload || null; },
+  showSkeleton(show) { if (skeletonHelper) skeletonHelper.visible = show; },
   closeup(target, height, azimuth = 25) {
     const a = THREE.MathUtils.degToRad(azimuth);
     controls.target.fromArray(target);
@@ -122,6 +176,7 @@ window.avatar = {
     controls.update();
   },
   stats() {
+    if (rigged) updateRig(model, true);
     let triangles = 0;
     const meshes = [];
     const materials = new Set();
@@ -135,7 +190,23 @@ window.avatar = {
     return { triangles, meshes, materialCount: materials.size, bounds: new THREE.Box3().setFromObject(model) };
   },
   async exportGLB() {
-    const result = await new GLTFExporter().parseAsync(model, { binary: true, onlyVisible: true, trs: false, maxTextureSize: 2048 });
+    const previous = { name: activeAction?.getClip().name || '', time: activeAction?.time || 0, playing };
+    if (rigged) playAnimation('', 0, false);
+    let exportRoot = model;
+    const children = rigged ? [...model.children] : [];
+    if (rigged) {
+      exportRoot = new THREE.Scene();
+      exportRoot.name = model.name;
+      exportRoot.userData = model.userData;
+      for (const child of children) exportRoot.attach(child);
+      exportRoot.updateMatrixWorld(true);
+    }
+    let result;
+    try {
+      result = await new GLTFExporter().parseAsync(exportRoot, { binary: true, onlyVisible: true, trs: rigged, animations: clips, maxTextureSize: 2048 });
+    } finally {
+      if (rigged) { for (const child of children) model.attach(child); playAnimation(previous.name, previous.time, previous.playing); }
+    }
     let data = '';
     const bytes = new Uint8Array(result);
     for (let start = 0; start < bytes.length; start += 32768) data += String.fromCharCode(...bytes.subarray(start, start + 32768));

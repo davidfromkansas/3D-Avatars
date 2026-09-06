@@ -4,3 +4,5 @@ node_modules/
 .img2threejs/
 previews/cat-operator/*/
 !previews/cat-operator/glb/
+previews/cat-operator-rigged/*/
+!previews/cat-operator-rigged/glb/

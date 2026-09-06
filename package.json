@@ -8,7 +8,11 @@
     "dev": "node scripts/serve.mjs",
     "capture": "node scripts/capture.mjs",
     "export": "node scripts/capture.mjs --export",
-    "test": "node scripts/validate.mjs"
+    "export:rig": "node scripts/capture.mjs --rigged --export",
+    "capture:rig": "node scripts/capture.mjs --rigged --glb",
+    "preview:rig": "node scripts/preview-rig.mjs",
+    "test": "node scripts/validate.mjs && node scripts/validate-rig.mjs",
+    "test:motion": "node scripts/verify-rig.mjs"
   },
   "repository": {
     "type": "git",

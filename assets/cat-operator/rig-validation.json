@@ -1,0 +1,132 @@
+{
+  "file": "cat-operator-rigged.glb",
+  "bytes": 12101528,
+  "triangles": 227364,
+  "bones": [
+    {
+      "name": "Root",
+      "node": 0
+    },
+    {
+      "name": "Hips",
+      "node": 1
+    },
+    {
+      "name": "Spine",
+      "node": 2
+    },
+    {
+      "name": "Chest",
+      "node": 3
+    },
+    {
+      "name": "Neck",
+      "node": 4
+    },
+    {
+      "name": "Head",
+      "node": 5
+    },
+    {
+      "name": "LeftShoulder",
+      "node": 6
+    },
+    {
+      "name": "LeftUpperArm",
+      "node": 7
+    },
+    {
+      "name": "LeftForeArm",
+      "node": 8
+    },
+    {
+      "name": "LeftHand",
+      "node": 9
+    },
+    {
+      "name": "RightShoulder",
+      "node": 10
+    },
+    {
+      "name": "RightUpperArm",
+      "node": 11
+    },
+    {
+      "name": "RightForeArm",
+      "node": 12
+    },
+    {
+      "name": "RightHand",
+      "node": 13
+    },
+    {
+      "name": "LeftUpperLeg",
+      "node": 14
+    },
+    {
+      "name": "LeftLowerLeg",
+      "node": 15
+    },
+    {
+      "name": "LeftFoot",
+      "node": 16
+    },
+    {
+      "name": "LeftToeBase",
+      "node": 17
+    },
+    {
+      "name": "RightUpperLeg",
+      "node": 18
+    },
+    {
+      "name": "RightLowerLeg",
+      "node": 19
+    },
+    {
+      "name": "RightFoot",
+      "node": 20
+    },
+    {
+      "name": "RightToeBase",
+      "node": 21
+    }
+  ],
+  "skinCount": 121,
+  "meshCount": 121,
+  "meshNodeCount": 121,
+  "weightedVertexCount": 178806,
+  "maxWeightError": 4.470348358154297e-8,
+  "embeddedImages": 8,
+  "animations": [
+    {
+      "name": "Idle",
+      "channelCount": 22,
+      "samplerCount": 22,
+      "duration": 3.200000047683716
+    },
+    {
+      "name": "Walk",
+      "channelCount": 22,
+      "samplerCount": 22,
+      "duration": 1.2000000476837158,
+      "loopingEndpoints": true
+    },
+    {
+      "name": "Wave",
+      "channelCount": 22,
+      "samplerCount": 22,
+      "duration": 2.4000000953674316
+    }
+  ],
+  "original": {
+    "file": "cat-operator.glb",
+    "gitBlobHash": "c797ac3a857d31576c6665d778dcee9fcf401b73",
+    "rigged": false,
+    "meshCount": 121,
+    "meshNodeCount": 121
+  },
+  "errors": 0,
+  "warnings": 0,
+  "info": []
+}

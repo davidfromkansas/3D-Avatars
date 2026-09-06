@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "coordinateSystem": { "up": "Y", "handedness": "right", "unit": "meter" },
+  "bindPose": "Existing reference standing A-pose; no change to the static asset",
+  "joints": [
+    { "name": "Root", "parent": null, "position": [0, 0, 0], "role": "global control" },
+    { "name": "Hips", "parent": "Root", "position": [0, 1.13, 0] },
+    { "name": "Spine", "parent": "Hips", "position": [0, 1.48, 0] },
+    { "name": "Chest", "parent": "Spine", "position": [0, 1.79, 0] },
+    { "name": "Neck", "parent": "Chest", "position": [0, 1.98, 0] },
+    { "name": "Head", "parent": "Neck", "position": [0, 2.10, 0] },
+    { "name": "LeftShoulder", "parent": "Chest", "position": [0.19, 1.84, 0] },
+    { "name": "LeftUpperArm", "parent": "LeftShoulder", "position": [0.34, 1.82, 0] },
+    { "name": "LeftForeArm", "parent": "LeftUpperArm", "position": [0.576, 1.445, 0.004] },
+    { "name": "LeftHand", "parent": "LeftForeArm", "position": [0.72, 1.20, 0.010] },
+    { "name": "RightShoulder", "parent": "Chest", "position": [-0.19, 1.84, 0] },
+    { "name": "RightUpperArm", "parent": "RightShoulder", "position": [-0.34, 1.82, 0] },
+    { "name": "RightForeArm", "parent": "RightUpperArm", "position": [-0.576, 1.445, 0.004] },
+    { "name": "RightHand", "parent": "RightForeArm", "position": [-0.72, 1.20, 0.010] },
+    { "name": "LeftUpperLeg", "parent": "Hips", "position": [0.226, 1.115, 0] },
+    { "name": "LeftLowerLeg", "parent": "LeftUpperLeg", "position": [0.295, 0.67, 0] },
+    { "name": "LeftFoot", "parent": "LeftLowerLeg", "position": [0.313, 0.30, -0.055] },
+    { "name": "LeftToeBase", "parent": "LeftFoot", "position": [0.35, 0.115, 0.245] },
+    { "name": "RightUpperLeg", "parent": "Hips", "position": [-0.226, 1.115, 0] },
+    { "name": "RightLowerLeg", "parent": "RightUpperLeg", "position": [-0.295, 0.67, 0] },
+    { "name": "RightFoot", "parent": "RightLowerLeg", "position": [-0.313, 0.30, -0.055] },
+    { "name": "RightToeBase", "parent": "RightFoot", "position": [-0.35, 0.115, 0.245] }
+  ],
+  "skinning": {
+    "maxInfluences": 4,
+    "method": "Continuous anatomical blend fields evaluated in bind-pose world space",
+    "headAndHeadset": "Rigid Head influence; no facial or ear deformation",
+    "garments": "Torso/spine and shoulder blending; sewn details use their host region's weights",
+    "boots": "Foot influence with forefoot toe blend; sole contact tracked during animation",
+    "attachments": "Headset follows Head; badge/tie follow torso; cargo pockets follow upper legs",
+    "bounds": "Conservative no-cull during playback; posed bounds recomputed for inspection and picking",
+    "hipBlendHeight": [0.86, 1.18],
+    "kneeBlendHeight": [0.44, 0.90],
+    "rootControl": "Root has no direct vertex influence and is not keyed by the included animation clips"
+  },
+  "animations": {
+    "Idle": { "duration": 3.2, "loop": true, "inPlace": true },
+    "Walk": { "duration": 1.2, "loop": true, "inPlace": true, "nominalForwardSpeed": 0.70 },
+    "Wave": { "duration": 2.4, "loop": true, "inPlace": true }
+  },
+  "poseProbes": ["bind", "shoulder-abduction", "elbow-flex", "hip-knee-flex", "wrist-ankle", "head-spine-turn"],
+  "qualityContract": {
+    "preserveBindAppearance": true,
+    "allSkinWeightsFiniteNormalized": true,
+    "oneBoneHierarchy": true,
+    "allAnimationRotationsNormalized": true,
+    "khronosErrors": 0,
+    "khronosWarnings": 0,
+    "requiredViews": ["front", "profile", "rear", "three-quarter"],
+    "limits": "Stylized body rig, no finger/facial rig, no cloth simulation, no automatic engine-specific humanoid retargeting metadata"
+  }
+}
