@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Cat Operator — 3D Avatar</title>
+  <link rel="icon" href="data:,">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #fafaf9; color: #242424; font-family: system-ui, sans-serif; }
+    canvas { display: block; width: 100vw; height: 100vh; }
+    header { position: fixed; top: 28px; left: 32px; pointer-events: none; }
+    h1 { font-size: 22px; margin: 0 0 6px; letter-spacing: -.6px; }
+    p { font-size: 13px; color: #6e6e6e; margin: 0; }
+    footer { position: fixed; bottom: 28px; left: 32px; display: flex; gap: 8px; }
+    button, a { font: inherit; font-size: 13px; padding: 10px 15px; border-radius: 8px; border: 1px solid #ddd; background: white; color: #242424; text-decoration: none; cursor: pointer; }
+    .capture header, .capture footer { display: none; }
+  </style>
+  <script type="importmap">{"imports":{"three":"/node_modules/three/build/three.module.js","three/addons/":"/node_modules/three/examples/jsm/"}}</script>
+</head>
+<body>
+  <header><h1>Cat Operator</h1><p>Reference-based 3D avatar · drag to orbit · scroll to zoom</p></header>
+  <footer><button id="front">Front</button><button id="back">Back</button><button id="explode">Inspect parts</button><a href="/assets/cat-operator/cat-operator.glb" download>Download GLB</a></footer>
+  <script type="module" src="/src/viewer.js"></script>
+</body>
+</html>

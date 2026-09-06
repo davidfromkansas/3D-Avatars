@@ -1,0 +1,64 @@
+{
+  "comparisons": [
+    {
+      "view": "front",
+      "width": 568,
+      "height": 1024,
+      "rgbRMSE": 1.4429946480568512,
+      "maxChannelDifference": 107
+    },
+    {
+      "view": "right",
+      "width": 568,
+      "height": 1024,
+      "rgbRMSE": 1.0381386484279167,
+      "maxChannelDifference": 107
+    },
+    {
+      "view": "back",
+      "width": 568,
+      "height": 1024,
+      "rgbRMSE": 1.3816730313947962,
+      "maxChannelDifference": 97
+    },
+    {
+      "view": "left",
+      "width": 568,
+      "height": 1024,
+      "rgbRMSE": 0.9889607628979237,
+      "maxChannelDifference": 98
+    },
+    {
+      "view": "hero",
+      "width": 568,
+      "height": 1024,
+      "rgbRMSE": 1.4873110017472564,
+      "maxChannelDifference": 110
+    }
+  ],
+  "interaction": {
+    "movedAssemblies": 8,
+    "restored": true,
+    "pickedPart": "head",
+    "passed": true
+  },
+  "passed": true,
+  "thresholdRGBRMSE": 3,
+  "bounds": {
+    "isBox3": true,
+    "min": {
+      "x": -0.8972222208976746,
+      "y": -1.0430813157658037e-10,
+      "z": -0.5649999976158142
+    },
+    "max": {
+      "x": 0.8972222208976746,
+      "y": 3.4918501377105713,
+      "z": 0.7130000000000001
+    }
+  },
+  "triangles": 227364,
+  "meshes": 121,
+  "unnamedMeshes": 0,
+  "limitations": "Pixel roundtrip measures export/import preservation, not reference likeness. Texture filtering can differ slightly after GLB reload."
+}

@@ -1,0 +1,31 @@
+{
+  "name": "3d-avatars",
+  "version": "1.0.0",
+  "description": "Procedurally authored, reference-based GLB avatars",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "capture": "node scripts/capture.mjs",
+    "export": "node scripts/capture.mjs --export",
+    "test": "node scripts/validate.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidfromkansas/3D-Avatars.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/davidfromkansas/3D-Avatars/issues"
+  },
+  "homepage": "https://github.com/davidfromkansas/3D-Avatars#readme",
+  "dependencies": {
+    "three": "0.180.0"
+  },
+  "devDependencies": {
+    "gltf-validator": "2.0.0-dev.3.10",
+    "playwright": "1.56.1"
+  }
+}

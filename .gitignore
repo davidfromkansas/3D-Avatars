@@ -1,0 +1,6 @@
+node_modules/
+.DS_Store
+*.blend1
+.img2threejs/
+previews/cat-operator/*/
+!previews/cat-operator/glb/

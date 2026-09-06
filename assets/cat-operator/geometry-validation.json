@@ -1,0 +1,27 @@
+{
+  "model": "cat-operator",
+  "partCoverage": {
+    "specifiedGeometryComponents": 74,
+    "errors": 0,
+    "warnings": 0,
+    "note": "The white facial blaze is an embedded material region on the head, not a separate mesh. Additional named stitching and hardware details are present."
+  },
+  "sampledSelfIntersection": {
+    "meshCount": 121,
+    "selfIntersecting": false,
+    "insideVertexCount": 0,
+    "undecidedVertexCount": 92,
+    "sampledVertexCount": 14038,
+    "totalVertexCount": 178806,
+    "errors": [],
+    "limitations": "Deterministic sampled intra-mesh test, not an exhaustive intersection or watertightness proof. Intentional overlap between separate assembled components is not tested by this check."
+  },
+  "visualChecks": {
+    "views": ["front", "right", "back", "left", "three-quarter", "head close-up", "uniform close-up"],
+    "referenceSilhouetteIoU": 0.8649,
+    "approximateReconstruction": true,
+    "notes": "Garment folds, facial construction and boot shape are stylized approximations. Material comparisons assess rendered appearance, not recovered albedo or BRDF."
+  },
+  "rigged": false,
+  "animations": 0
+}
