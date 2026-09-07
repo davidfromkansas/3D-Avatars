@@ -22,4 +22,4 @@ That mediation earned him the [1906 Nobel Peace Prize](https://www.nobelprize.or
 
 After leaving office, Roosevelt remained an influential author, traveler, reform advocate, and political figure, including as the Progressive Party’s presidential candidate in 1912.
 
-His energetic public image and his approaches to presidential power, conservation, reform, and diplomacy left a lasting and debated legacy.
+His energetic public image and [expansion of presidential power](https://millercenter.org/president/roosevelt/impact-and-legacy) left a lasting legacy, while his assertive foreign policy and [mixed record on race](https://millercenter.org/president/roosevelt/domestic-affairs) remain subjects of debate.
