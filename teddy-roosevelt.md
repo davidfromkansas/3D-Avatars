@@ -1,4 +1,4 @@
-# Theodore “Teddy” Roosevelt
+# Theodore “Teddy” Roosevelt: A Short Biography
 
 [Theodore Roosevelt (1858–1919)](https://www.nps.gov/people/life-of-theodore-roosevelt.htm) was the 26th president of the United States.
 
